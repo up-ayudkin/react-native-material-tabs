@@ -112,7 +112,9 @@ const MaterialTabs: React.FC<Props> = ({
 
     bar.current &&
       bar.current.measure((_, b, width) => {
-        getTabWidth(width);
+        if (width != null) {
+          getTabWidth(width);
+        }
       });
 
     selectTab();
